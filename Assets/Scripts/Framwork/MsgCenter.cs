@@ -17,7 +17,18 @@ using UnityEngine.UI;
 
 public class MsgCenter : MonoBase
 {
+    public static MsgCenter Instance;
+ 
+    private void Awake()
+    {
+        Instance = this;
 
+        gameObject.AddComponent<UIManager>();
+        gameObject.AddComponent<AudioManager>();
+        gameObject.AddComponent<CharacterManager>();
+        
+        DontDestroyOnLoad(gameObject);
+    }
     /// <summary>
     /// 发送消息 , 所有的发消息,都要通过这个方法
     /// </summary>
@@ -29,10 +40,12 @@ public class MsgCenter : MonoBase
         switch (areaCode)
         {
             case AreaCode.UI:
+                UIManager.Instance.Execute(eventCode, message);
                 break;
             case AreaCode.GAME:
                 break;
             case AreaCode.CHARACTER:
+                CharacterManager.Instance.Execute(eventCode, message);
                 break;
             case AreaCode.AUDIO:
                 AudioManager.Instance.Execute(eventCode, message);

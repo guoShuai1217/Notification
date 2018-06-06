@@ -19,7 +19,7 @@ using UnityEngine.UI;
 /// <summary>
 /// 管理基类,所有模块的管理类都要继承它
 /// </summary>
-public class ManagerBase : MonoBase
+public class ManagerBase : MonoBase 
 {
     
     // 存储消息的事件码

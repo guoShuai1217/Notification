@@ -2,7 +2,7 @@
  * 
  *   Title : "" 项目
  *
- *   Description : 音频管理器 
+ *   Description :
  *
  *   Author : guoShuai
  *
@@ -14,21 +14,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AudioManager : ManagerBase
+public class UIManager : ManagerBase
 {
-
-    public static AudioManager Instance;
+    public static UIManager Instance;
 
     private void Awake()
     {
         Instance = this;
     }
-
-
-
-
-
-
 
 
 }
